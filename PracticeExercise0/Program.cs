@@ -102,7 +102,32 @@ namespace PracticeExcercise0
         // #4
         public static bool IsNeilNumber(int i)
         {
-            return true;
+            int sum = 0;
+            int n = i;
+            int z = i;
+            int digits = 0;
+
+            while (z != 0)
+            {
+                digits = digits + 1;
+                z = z / 10;
+            }
+
+            while (n != 0)
+            {
+                sum = sum + (int)Math.Pow((n % 10), digits);
+                n = n / 10;
+            }
+
+            if (sum == i)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
     }
